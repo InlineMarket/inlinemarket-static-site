@@ -6,324 +6,7 @@
     <title>InlineMarket Professional Services | Cloud Solutions for BI</title>
     <meta name="description" content="Automate, integrate, and innovate with InlineMarket's scalable cloud solutions and professional services for business intelligence.">
     <link rel="shortcut icon" href="images/InlineMarket-no-background-2.png">
-    <style>
-        /* All your existing CSS from the previous complete file goes here */
-        /* (Make sure body has padding-top: 60px; if header is sticky) */
-        @font-face {
-            font-family: "Roboto Slab";
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-            src: url("https://fonts.gstatic.com/s/robotoslab/v16/BngMUXZYTXPIvIBgJJSb6ufA.woff2") format("woff2");
-        }
-        @font-face {
-            font-family: "Roboto";
-            font-weight: 300;
-            font-style: normal;
-            font-display: swap;
-            src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc9.woff2") format("woff2");
-        }
-        @font-face {
-            font-family: "Roboto";
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-            src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc9.woff2") format("woff2");
-        }
-
-        body {
-            margin: 0;
-            padding-top: 60px; /* For sticky header */
-            font-family: "Roboto", sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #444444;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        /* --- STICKY HEADER STYLES (Copied from previous example) --- */
-        header { /* This style will be applied to the header loaded from header.html */
-            background-color: #18293A;
-            color: #FFFFFF;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header .header-content { 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1100px; 
-            margin: 0 auto;
-            padding: 0 20px; 
-        }
-        header .logo img {
-            width: 150px; 
-            height: auto;
-            display: block;
-        }
-        header nav ul { /* Styling for the nav inside the loaded header */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; 
-        }
-        header nav ul li {
-            display: inline-block;
-            margin: 0 10px; 
-        }
-        header nav ul li a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 10px; 
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            padding: 5px 0;
-        }
-        header nav ul li a:hover {
-            color: #EE2D45;
-        }
-        header nav ul li a.cta-button { 
-            background-color: transparent;
-            border: 1px solid #FAFAFA;
-            color: #FFFFFF !important;
-            padding: 6px 12px; 
-            border-radius: 2px;
-            font-size: 10px;
-        }
-        header nav ul li a.cta-button:hover {
-            border-color: #EE2D45;
-            color: #EE2D45 !important;
-        }
-        header .mobile-menu-toggle { /* Styling for the toggle inside the loaded header */
-            display: none; 
-            color: #FFFFFF;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* --- END STICKY HEADER STYLES --- */
-
-        /* --- ALL OTHER PAGE-SPECIFIC STYLES (hero, section, services-grid, etc.) GO HERE --- */
-        .hero {
-            background-image: url('images/header-1.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, rgba(51, 71, 91, 0.40) 0%, rgba(24, 41, 58, 1) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero h4 {
-            font-family: "Roboto Slab", serif;
-            font-size: 20px;
-            font-weight: normal;
-            margin-bottom: 10px;
-        }
-        .hero h1 {
-            font-family: "Roboto Slab", serif;
-            font-size: 40px;
-            font-weight: normal;
-            margin-top: 0;
-            line-height: 1.2;
-        }
-        .section {
-            padding: 40px 20px;
-            background-color: #18293A; 
-            color: #FFFFFF;
-            text-align: center;
-        }
-        .section.light-bg { 
-            background-color: #FFFFFF;
-            color: #444444;
-        }
-        .section h2 {
-            font-family: "Roboto Slab", serif;
-            font-size: 30px;
-            margin-bottom: 10px;
-            color: #FFFFFF; 
-        }
-        .section.light-bg h2 { 
-            color: #444444;
-        }
-        .section h3 {
-            font-family: "Roboto Slab", serif;
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #EE2D45; 
-        }
-        .section p {
-            font-size: 17px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 20px;
-            color: #cccccc; 
-        }
-        .section.light-bg p { 
-            color: #444444;
-        }
-        .divider {
-            width: 70px;
-            height: 8px;
-            background-color: #e0231c;
-            margin: 0 auto 30px auto;
-        }
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .service-item {
-            background-color: #2a3f54; 
-            padding: 20px;
-            border-radius: 8px;
-            width: calc(33.333% - 20px); 
-            box-sizing: border-box;
-        }
-        .service-item h4 {
-            font-family: "Roboto Slab", serif;
-            font-size: 18px;
-            color: #fafafa;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-        .service-item p {
-            font-size: 15px;
-            margin-bottom: 0;
-            color: #cccccc;
-        }
-        .cta-link {
-            display: inline-block;
-            background-color: #EE2D45;
-            color: #FFFFFF !important;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 2px;
-            text-transform: uppercase;
-            font-size: 11px;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-link:hover {
-            background-color: #e0213c;
-        }
-        .partner-section img.microsoft-logo {
-            max-width: 250px;
-            height: auto;
-            margin-top: 20px;
-            background-color: white; 
-            padding:10px;
-            border-radius: 5px;
-        }
-        .customer-logos {
-            margin-top: 30px;
-        }
-        .customer-logos img {
-            max-height: 35px;
-            width: auto;
-            margin: 10px 12px;
-            filter: grayscale(100%) brightness(250%) contrast(200%);
-        }
-        .contact-section a {
-            color: #EE2D45 !important;
-            text-decoration: none;
-        }
-        .contact-section a:hover {
-            text-decoration: underline;
-        }
-        .contact-section .address {
-            font-size: 16px;
-            color: #cccccc; 
-            margin-top: 10px;
-            line-height: 1.8;
-        }
-        /* Footer styling will be applied to the loaded footer.html */
-        footer { 
-            background-color: #18293A;
-            color: #EEEEEE;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-            border-top: 1px solid #33475b;
-        }
-        footer a {
-            color: #EEEEEE;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            color: #EE2D45;
-        }
-        footer .social-icons a {
-            margin: 0 8px;
-        }
-
-        @media (max-width: 768px) {
-             header .header-content {
-                padding: 0 10px; 
-            }
-            header nav ul { /* Styles for the mobile dropdown */
-                display: none; 
-                flex-direction: column;
-                position: absolute;
-                top: 50px; /* Position below header - adjust if header height changes */
-                left: 0;
-                width: 100%;
-                background-color: #18293A;
-                padding: 10px 0;
-                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-            header nav ul.active { /* Class to show mobile nav */
-                display: flex;
-            }
-            header nav ul li { 
-                display: block; 
-                margin: 10px 0; 
-                text-align: center;
-            }
-            header .mobile-menu-toggle {
-                display: block; 
-            }
-
-            .hero h1 { font-size: 32px; }
-            .section h2 { font-size: 26px; }
-            .services-grid .service-item {
-                width: calc(50% - 15px);
-            }
-        }
-        @media (max-width: 575px) {
-            .hero { padding: 60px 15px; }
-            .hero h1 { font-size: 28px; }
-            .hero h4 { font-size: 18px; }
-            .section h2 { font-size: 22px; }
-            .services-grid .service-item {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
 
@@ -342,31 +25,32 @@
             <div class="divider"></div>
             <h2>Automate, integrate, innovate</h2>
             <p>Our team focuses on providing scalable cloud-based data platforms. Our goal is to maximise automation and get the most out of existing business data.</p>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <h4>Onboarding Services</h4>
-                    <p>Get peace of mind as our experts deploy our platform, validate data, and guide you to maximise performance.</p>
-                </div>
-                <div class="service-item">
-                    <h4>Integration Services</h4>
-                    <p>Build customer-specific data models and measures for reporting and advanced analytics.</p>
-                </div>
-                <div class="service-item">
-                    <h4>Data Specialists</h4>
-                    <p>To build customer-specific data models and measures for reporting and advanced analytics.</p>
-                </div>
-                <div class="service-item">
-                    <h4>Dashboard & Reporting</h4>
-                    <p>Build custom dashboards and reports, enabling focus on critical business measures.</p>
-                </div>
-                <div class="service-item">
-                    <h4>DevOps & MLOps</h4>
-                    <p>Continuously develop your platform and predictions, leveraging CI/CD for quality and cost-efficiency.</p>
-                </div>
-                <div class="service-item">
-                    <h4>Live Support</h4>
-                    <p>Contact us via email or Teams. Our team will always respond.</p>
+            <div class="services-grid"></div>
+                <div class="services-list">
+                    <div class="service-item">
+                        <h4>Onboarding Services</h4>
+                        <p>Get peace of mind as our experts deploy our platform, validate data, and guide you to maximise performance.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Integration Services</h4>
+                        <p>Build customer-specific data models and measures for reporting and advanced analytics.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Data Specialists</h4>
+                        <p>To build customer-specific data models and measures for reporting and advanced analytics.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Dashboard & Reporting</h4>
+                        <p>Build custom dashboards and reports, enabling focus on critical business measures.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>DevOps & MLOps</h4>
+                        <p>Continuously develop your platform and predictions, leveraging CI/CD for quality and cost-efficiency.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Live Support</h4>
+                        <p>Contact us via email or Teams. Our team will always respond.</p>
+                    </div>
                 </div>
             </div>
         </div>
