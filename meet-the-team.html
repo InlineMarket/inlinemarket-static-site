@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team - InlineMarket</title>
+    <meta name="description" content="Get to know the brilliant minds behind InlineMarket's success! Meet our talented team driving innovation in tech and marketing intelligence. #Inliners">
+    <link rel="shortcut icon" href="images/InlineMarket-no-background-2.png">
+    <style>
+        @font-face {
+            font-family: "Roboto Slab";
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            src: url("https://fonts.gstatic.com/s/robotoslab/v16/BngMUXZYTXPIvIBgJJSb6ufA.woff2") format("woff2");
+        }
+        @font-face {
+            font-family: "Roboto";
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+            src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc9.woff2") format("woff2");
+        }
+        @font-face {
+            font-family: "Roboto";
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+            src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc9.woff2") format("woff2");
+        }
+
+        body {
+            margin: 0;
+            padding-top: 60px; /* For sticky header */
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #444444;
+            background-color: #FFFFFF; /* Default to white, sections can override */
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        /* --- STYLES FOR DYNAMICALLY LOADED HEADER --- */
+        #header-placeholder header {
+            background-color: #18293A;
+            color: #FFFFFF;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #header-placeholder .header-content { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px; 
+            margin: 0 auto;
+            padding: 0 20px; 
+        }
+        #header-placeholder .logo img {
+            width: 150px; 
+            height: auto;
+            display: block;
+        }
+        #header-placeholder nav ul { 
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+        }
+        #header-placeholder nav ul li {
+            display: inline-block;
+            margin: 0 10px; 
+        }
+        #header-placeholder nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 10px; 
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 5px 0;
+        }
+        #header-placeholder nav ul li a:hover {
+            color: #EE2D45;
+        }
+        #header-placeholder nav ul li a.cta-button { 
+            background-color: transparent;
+            border: 1px solid #FAFAFA;
+            color: #FFFFFF !important;
+            padding: 6px 12px; 
+            border-radius: 2px;
+            font-size: 10px;
+        }
+        #header-placeholder nav ul li a.cta-button:hover {
+            border-color: #EE2D45;
+            color: #EE2D45 !important;
+        }
+        #header-placeholder .mobile-menu-toggle { 
+            display: none; 
+            color: #FFFFFF;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* --- END STYLES FOR DYNAMICALLY LOADED HEADER --- */
+
+        .hero {
+            background-image: url('https://www.qova.ai/hubfs/IM%20ryhm%C3%A4kuva%20neukkari%20v2.png'); /* Team hero image */
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 120px 20px; /* Adjusted padding */
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.50); /* Original overlay */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-family: "Roboto Slab", serif;
+            font-size: 48px; /* Larger for hero title */
+            font-weight: normal;
+            margin-top: 0;
+            line-height: 1.2;
+        }
+        
+        .section {
+            padding: 50px 20px;
+            text-align: center; /* Center align section titles and intros */
+        }
+        .section.light-bg {
+            background-color: #FFFFFF;
+            color: #444444;
+        }
+        .section h2 {
+            font-family: "Roboto Slab", serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #333333;
+        }
+        .section p.intro-text { /* For introductory paragraphs */
+            font-size: 18px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+            color: #555555;
+            line-height: 1.7;
+        }
+        .divider {
+            width: 70px;
+            height: 8px;
+            background-color: #e0231c;
+            margin: 0 auto 40px auto; /* Centered divider */
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Space between cards */
+            justify-content: center; /* Center cards in the row */
+            margin-top: 20px;
+        }
+        .team-member-card {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: calc(33.333% - 20px); /* Three cards per row, accounting for gap */
+            box-sizing: border-box;
+            overflow: hidden; /* To ensure rounded corners clip image */
+            text-align: left; /* Text inside card aligned left */
+            margin-bottom: 20px; /* If rows stack on smaller screens */
+        }
+        .team-member-card img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            max-height: 300px; /* Control image height */
+            object-fit: cover;
+            display: block;
+        }
+        .team-member-info {
+            padding: 20px;
+        }
+        .team-member-info h4 { /* Name */
+            font-family: "Roboto Slab", serif;
+            font-size: 20px;
+            color: #333333;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .team-member-info h5 { /* Title */
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #EE2D45; /* Accent color for title */
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .team-member-social a {
+            color: #555555;
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 18px; /* For icon fonts if used, or adjust for SVGs/images */
+        }
+        .team-member-social a:hover {
+            color: #EE2D45;
+        }
+        .team-member-social i { /* If using Font Awesome icons */
+             vertical-align: middle;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f2f5f8; /* Light grey background */
+        }
+         .cta-section h2 { 
+            color: #18293A; /* Darker heading for contrast */
+        }
+        .cta-link {
+            display: inline-block;
+            background-color: #EE2D45;
+            color: #FFFFFF !important;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-link:hover {
+            background-color: #e0213c;
+        }
+
+        /* --- STYLES FOR DYNAMICALLY LOADED FOOTER --- */
+        #footer-placeholder footer { 
+            background-color: #18293A;
+            color: #EEEEEE;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            border-top: 1px solid #33475b;
+        }
+        #footer-placeholder footer a {
+            color: #EEEEEE;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        #footer-placeholder footer a:hover {
+            color: #EE2D45;
+        }
+        #footer-placeholder footer .social-icons a {
+            margin: 0 8px;
+        }
+        /* --- END STYLES FOR DYNAMICALLY LOADED FOOTER --- */
+
+        @media (max-width: 992px) { /* Medium screens, 2 cards per row */
+            .team-member-card {
+                width: calc(50% - 15px);
+            }
+        }
+        @media (max-width: 768px) {
+             #header-placeholder .header-content {
+                padding: 0 10px; 
+            }
+            #header-placeholder nav ul { 
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 50px; 
+                left: 0;
+                width: 100%;
+                background-color: #18293A;
+                padding: 10px 0;
+                 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            #header-placeholder nav ul.active { 
+                display: flex;
+            }
+            #header-placeholder nav ul li { 
+                display: block; 
+                margin: 10px 0; 
+                text-align: center;
+            }
+            #header-placeholder .mobile-menu-toggle {
+                display: block; 
+                position: absolute; 
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .hero h1 { font-size: 36px; }
+        }
+        @media (max-width: 575px) { /* Small screens, 1 card per row */
+            .hero { padding: 80px 15px; }
+            .hero h1 { font-size: 30px; }
+            .section h2 { font-size: 24px; }
+            .team-member-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Meet the Team</h1>
+        </div>
+    </section>
+
+    <section class="section light-bg">
+        <div class="container">
+            <div class="divider"></div>
+            <h2>We do everything with our core values of honesty, hard work, and trust.</h2>
+            <p class="intro-text">With passion and expertise, our remarkable team delivers outstanding benefits to our clients. Get to know the individuals behind our success as they combine dedication, innovation, and unwavering client satisfaction for remarkable outcomes.</p>
+            <h2 style="margin-top: 40px;">Inliners</h2>
+        </div>
+    </section>
+
+    <section class="section light-bg" style="padding-top: 0;"> <!-- Continued light background for team cards -->
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/P%C3%A4iv%C3%A4rinta-Niko_0008-1.png" alt="Niko Päivärinta">
+                    <div class="team-member-info">
+                        <h4>Niko Päivärinta</h4>
+                        <h5>CEO</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:niko.paivarinta@inlinemarket.fi" target="_blank"><i class="far fa-paper-plane"></i>Email</a>
+                            <a href="https://www.linkedin.com/in/nikopaivarinta/" target="_blank"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Gorelova-Alessya_0138-1.png" alt="Alessya Gorelova">
+                    <div class="team-member-info">
+                        <h4>Alessya Gorelova</h4>
+                        <h5>DIRECTOR, PROFESSIONAL SERVICES</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:alessya.gorelova@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/alessya-gorelova/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Raj-Pan_0205-1.png" alt="Raj Pan">
+                    <div class="team-member-info">
+                        <h4>Raj Pan</h4>
+                        <h5>IT DIRECTOR</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:raj.pan@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/rajkumarpan/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Hai-Vu-Long_0177-1.png" alt="Long Vu">
+                    <div class="team-member-info">
+                        <h4>Long Vu</h4>
+                        <h5>FULL STACK DEVELOPER</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:long.vu@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/longvu224/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Vasavi-Mamidi_0082-1.png" alt="Mamidi Vasavi">
+                    <div class="team-member-info">
+                        <h4>Mamidi Vasavi</h4>
+                        <h5>DEVOPS LEAD</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:mamidi.vasavi@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/mamidi-vasavi-823b1474/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/sandesh_poudel_office_pic-1.jpg" alt="Sandesh Poudel">
+                    <div class="team-member-info">
+                        <h4>Sandesh Poudel</h4>
+                        <h5>SENIOR SOFTWARE ENGINEER</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:sandesh.poudel@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/curiousan/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Ngo-Hang_0064-1.png" alt="Hang Ngo">
+                    <div class="team-member-info">
+                        <h4>Hang Ngo</h4>
+                        <h5>MARKET RESEARCH ANALYST</h5>
+                         <div class="team-member-social">
+                            <a href="mailto:hang.ngo@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/ngokimhang/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Vu%20Nam_0143-1.png" alt="Nam Vu">
+                    <div class="team-member-info">
+                        <h4>Nam Vu</h4>
+                        <h5>DEVOPS LEAD</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:nam.vu@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/namv/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Yilmaz-Cebrail_0036-1.png" alt="Cebrail Yilmaz">
+                    <div class="team-member-info">
+                        <h4>Cebrail Yilmaz</h4>
+                        <h5>FULL STACK DEVELOPER</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:cebrail.yilmaz@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/cebrailyilmaz/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Untitled%20(1200%20%C3%97%201200%20px)%20(3)-1.png" alt="Rabbil Bhuiyan">
+                    <div class="team-member-info">
+                        <h4>Rabbil Bhuiyan</h4>
+                        <h5>DEVOPS TRAINEE</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:rabbil.bhuiyan@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/rabbil-bhuiyan/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://www.qova.ai/hs-fs/hubfs/Untitled%20(1200%20%C3%97%201200%20px)%20(1)-1.png" alt="Olivia Päivärinta">
+                    <div class="team-member-info">
+                        <h4>Olivia Päivärinta</h4>
+                        <h5>ADMIN ASSISTANT</h5>
+                        <div class="team-member-social">
+                            <a href="mailto:olivia.paivarinta@inlinemarket.fi" target="_blank">Email</a>
+                            <a href="https://www.linkedin.com/in/olivia-p%C3%A4iv%C3%A4rinta-692018236/" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- .team-grid -->
+        </div> <!-- .container -->
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="divider" style="background-color: #18293A;"></div> <!-- Darker divider on light bg for contrast -->
+            <h2>Join us on this transformative journey today</h2>
+            <p style="margin-top: 20px; margin-bottom: 30px; color: #444444;">Check our open positions and become an Inliner!</p>
+            <a href="https://www.qova.ai/career" class="cta-link" target="_blank" rel="noopener">View Careers</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
