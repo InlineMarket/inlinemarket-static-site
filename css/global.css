@@ -104,12 +104,12 @@ header .mobile-menu-toggle {
 
 /* --- PAGE-SPECIFIC STYLES --- */
 .hero {
-    background-image: url('images/header-1.jpg');
+    background-image: url('../images/header-1.jpg');
     background-size: cover;
     background-position: center;
     color: #FFFFFF;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
     position: relative;
 }
 .hero::before {
@@ -407,8 +407,8 @@ footer .social-icons a {
 }
 
 /* --- MEET THE TEAM PAGE STYLES --- */
-.hero {
-    background-image: url('https://www.qova.ai/hubfs/IM%20ryhm%C3%A4kuva%20neukkari%20v2.png');
+.hero-team {
+    background-image: url('../images/IM-team.png');
     background-size: cover;
     background-position: center;
     color: #FFFFFF;
@@ -416,18 +416,18 @@ footer .social-icons a {
     padding: 120px 20px;
     position: relative;
 }
-.hero::before {
+.hero-team::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.50);
     z-index: 1;
 }
-.hero-content {
+.hero-team .hero-content {
     position: relative;
     z-index: 2;
 }
-.hero h1 {
+.hero-team h1 {
     font-family: "Roboto Slab", serif;
     font-size: 48px;
     font-weight: normal;
