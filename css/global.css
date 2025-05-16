@@ -1,0 +1,634 @@
+@font-face {
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/robotoslab/v16/BngMUXZYTXPIvIBgJJSb6ufA.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Roboto";
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc9.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmWUlfBBc9.woff2") format("woff2");
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #444444;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- STICKY HEADER STYLES --- */
+header {
+    background-color: #18293A;
+    color: #FFFFFF;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header .logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+header nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+header nav ul li a:hover {
+    color: #EE2D45;
+}
+header nav ul li a.cta-button {
+    background-color: transparent;
+    border: 1px solid #FAFAFA;
+    color: #FFFFFF !important;
+    padding: 6px 12px;
+    border-radius: 2px;
+    font-size: 10px;
+}
+header nav ul li a.cta-button:hover {
+    border-color: #EE2D45;
+    color: #EE2D45 !important;
+}
+header .mobile-menu-toggle {
+    display: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    cursor: pointer;
+}
+/* --- END STICKY HEADER STYLES --- */
+
+/* --- PAGE-SPECIFIC STYLES --- */
+.hero {
+    background-image: url('images/header-1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(51, 71, 91, 0.40) 0%, rgba(24, 41, 58, 1) 100%);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.hero h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 0;
+    line-height: 1.2;
+}
+.section {
+    padding: 40px 20px;
+    background-color: #18293A;
+    color: #FFFFFF;
+    text-align: center;
+}
+.section.light-bg {
+    background-color: #FFFFFF;
+    color: #444444;
+}
+.section h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+.section.light-bg h2 {
+    color: #444444;
+}
+.section h3 {
+    font-family: "Roboto Slab", serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #EE2D45;
+}
+.section p {
+    font-size: 17px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    color: #cccccc;
+}
+.section.light-bg p {
+    color: #444444;
+}
+.divider {
+    width: 70px;
+    height: 8px;
+    background-color: #e0231c;
+    margin: 0 auto 30px auto;
+}
+
+/* --- SERVICES GRID --- */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+.service-item {
+    background-color: #2a3f54;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: box-shadow 0.2s;
+}
+.service-item h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: #fafafa;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.service-item p {
+    font-size: 15px;
+    margin-bottom: 0;
+    color: #cccccc;
+}
+.service-item:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* --- PARTNER & CUSTOMER LOGOS --- */
+.partner-section img.microsoft-logo {
+    max-width: 250px;
+    height: auto;
+    margin-top: 20px;
+    background-color: white;
+    padding:10px;
+    border-radius: 5px;
+}
+.customer-logos {
+    margin-top: 30px;
+}
+.customer-logos img {
+    max-height: 35px;
+    width: auto;
+    margin: 10px 12px;
+    filter: grayscale(100%) brightness(250%) contrast(200%);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section a {
+    color: #EE2D45 !important;
+    text-decoration: none;
+}
+.contact-section a:hover {
+    text-decoration: underline;
+}
+.contact-section .address {
+    font-size: 16px;
+    color: #cccccc;
+    margin-top: 10px;
+    line-height: 1.8;
+}
+.contact-section h2 {
+    color: #FFFFFF !important;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #18293A;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    border-top: 1px solid #33475b;
+}
+footer a {
+    color: #EEEEEE;
+    text-decoration: none;
+    margin: 0 10px;
+}
+footer a:hover {
+    color: #EE2D45;
+}
+footer .social-icons a {
+    margin: 0 8px;
+}
+
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+.section.grey-bg {
+    background-color: #f2f5f8;
+    color: #444444;
+}
+.section.dark-bg {
+    background-color: #18293A;
+    color: #FFFFFF;
+}
+.section.dark-bg h2.white-title {
+    color: #FFFFFF;
+}
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.content-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.content-block .text-content,
+.content-block .image-content {
+    flex: 1;
+    min-width: 300px;
+}
+.content-block.image-right .text-content { order: 1; }
+.content-block.image-right .image-content { order: 2; }
+.content-block.image-left .text-content { order: 2; }
+.content-block.image-left .image-content { order: 1; }
+
+.expertise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.expertise-item {
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    width: calc(50% - 10px);
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.expertise-item svg {
+    width: 50px;
+    height: 50px;
+    fill: #e0231c;
+    margin-bottom: 15px;
+}
+.expertise-item h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.expertise-item p {
+    font-size: 15px;
+    color: #555555;
+    margin-bottom: 0;
+    text-align: left;
+}
+.cta-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f2f5f8;
+}
+.cta-section h2 {
+    color: #333333;
+}
+
+/* --- INVOICING PAGE STYLES --- */
+.page-title-section {
+    background-color: #f2f5f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+.page-title-section h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 36px;
+    color: #18293A;
+    margin: 0;
+}
+.content-section {
+    padding: 40px 20px;
+}
+.content-section h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 28px;
+    color: #18293A;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #EE2D45;
+    display: inline-block;
+}
+.content-section h3 {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    color: #333333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.invoicing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.invoicing-table th, .invoicing-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.invoicing-table th {
+    background-color: #f9f9f9;
+    font-weight: 700;
+    color: #333;
+}
+.invoicing-address p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+.invoicing-address strong {
+    font-weight: 700;
+}
+
+/* --- MEET THE TEAM PAGE STYLES --- */
+.hero {
+    background-image: url('https://www.qova.ai/hubfs/IM%20ryhm%C3%A4kuva%20neukkari%20v2.png');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+.hero h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin-top: 0;
+    line-height: 1.2;
+}
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+.section.light-bg {
+    background-color: #FFFFFF;
+    color: #444444;
+}
+.section h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333333;
+}
+.section p.intro-text {
+    font-size: 18px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    color: #555555;
+    line-height: 1.7;
+}
+.divider {
+    width: 70px;
+    height: 8px;
+    background-color: #e0231c;
+    margin: 0 auto 40px auto;
+}
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.team-member-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.team-member-card img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.team-member-info {
+    padding: 20px;
+}
+.team-member-info h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.team-member-info h5 {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #EE2D45;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.team-member-social a {
+    color: #555555;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+.team-member-social a:hover {
+    color: #EE2D45;
+}
+.team-member-social i {
+    vertical-align: middle;
+}
+.cta-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f2f5f8;
+}
+.cta-section h2 {
+    color: #18293A;
+}
+.cta-link {
+    display: inline-block;
+    background-color: #EE2D45;
+    color: #FFFFFF !important;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+.cta-link:hover {
+    background-color: #e0213c;
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 992px) {
+    .team-member-card {
+        width: calc(50% - 15px);
+    }
+}
+@media (max-width: 768px) {
+    header .header-content {
+        padding: 0 10px;
+    }
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #18293A;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header nav ul.active {
+        display: flex;
+    }
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    header .mobile-menu-toggle {
+        display: block;
+    }
+    .hero h1 { font-size: 32px; }
+    .section h2 { font-size: 26px; }
+    .services-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .service-item {
+        width: 100%;
+    }
+    .team-member-card {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 575px) {
+    .hero { padding: 60px 15px; }
+    .hero h1 { font-size: 28px; }
+    .hero h4 { font-size: 18px; }
+    .section h2 { font-size: 22px; }
+    .team-member-card {
+        width: 100%;
+    }
+    .service-item {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .page-title-section h1 { font-size: 30px; }
+    .content-section h2 { font-size: 24px; }
+    .content-section h3 { font-size: 18px; }
+}
+@media (max-width: 575px) {
+    .page-title-section h1 { font-size: 26px; }
+    .content-section h2 { font-size: 22px; }
+    .content-section h3 { font-size: 17px; }
+    .invoicing-table th, .invoicing-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .invoicing-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+.partner-section h2 {
+    color: #fff !important;
+}
+.customer-references h2 {
+    color: #fff !important;
+}
+#services h2 {
+    color: #fff !important;
+}
